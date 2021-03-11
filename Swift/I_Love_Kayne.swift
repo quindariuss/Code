@@ -1,0 +1,7 @@
+print("I miss the old Kayne")
+print("How much do you miss the old Kayne?")
+let response_0 = readLine()
+print("you miss the old Kayne \(response_0) much?")
+print("Well dont fret because we have all the kayne's here")
+print("What Kayne do you want to see?")
+let response_1 = readLine()
