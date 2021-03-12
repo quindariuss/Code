@@ -1,28 +1,16 @@
 #include <stdio.h>
-
+#define LOWER 	0
+#define UPPER	300
+#define STEP	20
+ 
 int main(){
-int fahrenheit, celsius;
-int lower, upper, step;
+int fahrenheit;
 
-lower = 0;
-upper = 300; 
-step = 20; 
 
-fahrenheit = lower; 
 printf("Fahrenheit\t Celcius\n");
-while (fahrenheit <= upper){
-celsius = 5 * (fahrenheit - 32) / 9;
-printf("%d\t\t%d\n", fahrenheit, celsius);
-fahrenheit += step; 
+for(fahrenheit = LOWER; fahrenheit <= UPPER;  fahrenheit += STEP){
+printf("%3d %6.1f\n",fahrenheit, (5.0/9.0)*(fahrenheit-32));
 }
-celsius = lower;
-printf("Celcius\t\tFahrenheit\n");
 
-while (celsius <= upper){
-fahrenheit = celsius * 9/5 + 32;
-printf("%d\t\t%d\n", celsius,fahrenheit);
-celsius += step;
-
-}
 return 0;
 }
