@@ -3,9 +3,8 @@
 int main()
 {
 	int c; 
-	while(c != EOF){
+	while((c = getchar()) != EOF){
 		putchar(c);
-		c = getchar();
 	}
 }
 
