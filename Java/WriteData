@@ -1,0 +1,9 @@
+public class WriteData{
+   public static void main (String [] args)throws IOException{
+      java.io.File file = new java.io.File("Scores.txt");
+      if (file.exsit){
+         System.out.println("File already exsit");
+         System.exit(1);
+      }
+   }
+}
