@@ -1,0 +1,12 @@
+
+srand(time(NULL)); //seed the generator
+04
+ 
+05
+for(int i = 0; i < arrSize; i++)
+06
+{
+07
+     arr[i] = rand(); //huge number, you can give it a range by rand() % limit
+08
+}

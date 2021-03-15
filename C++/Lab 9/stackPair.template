@@ -1,0 +1,111 @@
+//
+//  stackPair.cpp
+//  Lab 9
+//
+//  Created by Quin’darius Lyles-Woods on 10/23/19.
+//  Copyright © 2019 Quin’darius Lyles-Woods. All rights reserved.
+//
+
+
+#include "stackPair.hpp"
+#include <cassert>
+#include <iostream>
+using namespace std;
+
+template <typename T>
+stackPair<T>::stackPair() {
+    top_a = 0;
+    top_b = CAPACITY - 1;
+}
+
+template <typename T>
+T stackPair<T>::pop_a() {
+    assert(!is_empty_a());
+    T val = data[top_a - 1];
+    top_a--;
+    return val;
+}
+
+template <typename T>
+T stackPair<T>::pop_b() {
+    assert(!is_empty_b());
+    T val = data[top_b + 1];
+    top_b++;
+    return val;
+}
+
+template <typename T>
+void stackPair<T>::push_a(T item) {
+    if (is_full_a()) {
+        std::cout << "A already filled.  not pushed";
+    }
+    else {
+        data[top_a] = item;
+        top_a++;
+    }
+}
+
+template <typename T>
+void stackPair<T>::push_b(T item) {
+    if (is_full_b()) {
+        std::cout << "B already filled.  not pushed";
+    }
+    else {
+        data[top_b] = item;
+        top_b--;
+    }
+}
+
+template <typename T>
+typename stackPair<T>::size_type stackPair<T>::size_a() const {
+    return top_a ;
+}
+
+template <typename T>
+typename stackPair<T>::size_type stackPair<T>::size_b() const {
+    return (CAPACITY - 1) - top_b;
+}
+
+template <typename T>
+bool stackPair<T>::is_empty_a() const {
+    return top_a == 0;
+}
+
+template <typename T>
+bool stackPair<T>::is_empty_b() const {
+    return top_b == CAPACITY - 1;
+}
+
+template <typename T>
+bool stackPair<T>::is_full_a() const {
+    return top_a > top_b;
+}
+
+template <typename T>
+bool stackPair<T>::is_full_b() const {
+    return top_b < top_a;
+}
+
+template <typename T>
+void stackPair<T>::print_stack_pair() const {
+    if (is_empty_a()) {
+        std::cout << "A is empty";
+    }
+    else {
+        for (size_type a_end = 0; a_end < top_a; a_end++) {
+            std::cout << data[a_end] << ' ';
+        }
+    }
+
+    std::cout << " | ";
+
+    if (is_empty_b()) {
+        std::cout << "B is empty";
+    }
+    else {
+        for (size_type b_end = CAPACITY - 1; b_end > top_b; b_end--) {
+            std::cout << data[b_end] << ' ';
+        }
+    }
+    std::cout << '\n';
+}
