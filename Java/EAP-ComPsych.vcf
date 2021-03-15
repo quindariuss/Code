@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//Mac OS X 10.13.1//EN
+N:;EAP;;;
+FN:EAP
+item1.TEL;type=pref:1 (844) 862-0889
+item1.X-ABLabel:In the US
+item2.TEL:+1-312-595-0074
+item2.X-ABLabel:Outside the US
+item3.URL;type=pref:https://www.guidanceresources.com/groWeb/login/login.xhtml
+item3.X-ABLabel:_$!<HomePage>!$_
+UID:762ea884-070f-4b35-a542-546f71e7fe41
+X-ABUID:AF88E1B7-9AEF-4570-AE2C-38A3F3BC354B:ABPerson
+END:VCARD
