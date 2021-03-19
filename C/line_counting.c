@@ -5,7 +5,7 @@ int main() {
 	int newline = 0;
 	int blank = 0; 
 	int tab = 0;
-	string copied_string = "";
+	char copiedstring[1000];
 	while((count = getchar()) != EOF)
 	{
 		if(count == '\n')
