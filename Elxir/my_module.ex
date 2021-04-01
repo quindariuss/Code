@@ -1,7 +1,7 @@
 defmodule MyModule do 
-	import IO
+	alias IO, as: MyIO	
 	
 	def my_function do 
-		puts "Calling an imported function."
+		MyIO.puts "Calling an imported function."
 	end 
 end 
