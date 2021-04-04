@@ -1,22 +1,36 @@
+
 {
-	   "user1" : {
-		  "name" : "mahesh",
-		  "password" : "password1",
-		  "profession" : "teacher",
-		  "id": 1
-	   },
-	   
-	   "user2" : {
-		  "name" : "suresh",
-		  "password" : "password2",
-		  "profession" : "librarian",
-		  "id": 2
-	   },
-	   
-	   "user3" : {
-		  "name" : "ramesh",
-		  "password" : "password3",
-		  "profession" : "clerk",
-		  "id": 3
-	   }
+	"smalldog" : 
+	{
+		"0-1" : 	"puppy",
+		"1-2" : 	"puppy",
+		"2-4" : 	"puppy",
+		"4-7" : 	"puppy",
+		"7-10" : 	"puppy",
+		"10-15" : 	"puppy",
+		"15-20" : 	"puppy"
+	},
+	
+	"medium dog" : 
+	{
+		"0-1" : 	"puppy",
+		"1-2" : 	"puppy",
+		"2-4" : 	"puppy",
+		"4-7" : 	"puppy",
+		"7-10" : 	"puppy",
+		"10-15" : 	"puppy",
+		"15-20" : 	"puppy"
+	},
+	
+	"largedog" : 
+	{
+		"0-1" : 	"puppy",
+		"1-2" : 	"puppy",
+		"2-4" : 	"puppy",
+		"4-7" : 	"puppy",
+		"7-10" : 	"puppy",
+		"10-15" : 	"puppy",
+		"15-20" : 	"puppy"
+	},
+	
 }
