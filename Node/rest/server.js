@@ -26,15 +26,6 @@ var puppy = {
 	},
 }
 
-app.post('/addpuppy', function (req, res) {
-	   // First read existing users.
-	   fs.readFile( __dirname + "/" + "puppyvistors.json", 'utf8', function (err, data) {
-		  data = JSON.parse( data );
-		  data["puppy"] = puppy["puppy"];
-		  console.log( data );
-		  res.end( JSON.stringify(data));
-	   });
-	})
 
 
 
