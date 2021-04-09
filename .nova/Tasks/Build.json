@@ -1,0 +1,14 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "script" : "cd Node\/userauth\ntsc server.ts"
+    },
+    "run" : {
+      "enabled" : true,
+      "script" : "cd Node\/userauth\nnode server.js"
+    }
+  },
+  "identifier" : "FF60D7D8-0D24-4FB1-BAF3-6DBA03DD3B45",
+  "openLogOnRun" : "finish"
+}
