@@ -1,42 +1,42 @@
+#include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-#include <pthread.h>
-#include <unistd.h> 
+#include <unistd.h>
 
-void *threader (void *vargp)
+#define MAX_THREADS 50
+
+pthread_t thread_id[MAX_THREADS];    
+
+void * PrintHello(void * data)
 {
-int i; 
-	
-	printf("starting thread");
-	sleep(1);
-	for(i = 1; i < 500000000; i++)
-	{
-		
-	}
-	return NULL;
+	printf("Hello from thread %u - I was created in iteration %d !\n", (int)pthread_self(), (int)data);
+	pthread_exit(NULL);
 }
 
-int main()
+int main(int argc, char * argv[])
 {
+	int rc, i, n;
 
-pthread_t thread;
-
-
-
-int i; 
-clock_t start = clock();
-pthread_create(&thread, NULL, threader, NULL);
-pthread_join(thread, NULL);
-
-	for(i = 1; i < 500000000; i++)
+	if(argc < 2) 
 	{
-		
+		printf("Please add the number of threads to the command line\n");
+		exit(1); 
 	}
-	
-clock_t end = clock();
+	n = atoi(argv[1]);
+	if(n > MAX_THREADS) n = MAX_THREADS;
 
-double time = (double)(end - start)/ CLOCKS_PER_SEC;
-printf("%f", time);
-return 0;
+	for(i = 0; i < n; i++)
+	{
+		rc = pthread_create(&thread_id[i], NULL, PrintHello, (void*)i);
+		if(rc)
+		{
+			 printf("\n ERROR: return code from pthread_create is %d \n", rc);
+			 exit(1);
+		}
+		printf("\n I am thread %u. Created new thread (%u) in iteration %d ...\n", 
+				(int)pthread_self(), (int)thread_id[i], i);
+		if(i % 5 == 0) sleep(1);
+	}
+
+	pthread_exit(NULL);
 }
