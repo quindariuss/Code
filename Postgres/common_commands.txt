@@ -1,0 +1,6 @@
+Starting Postgres:
+
+starts as an admin
+psql postgres 
+
+psql -f thefile.sql targetdatabase

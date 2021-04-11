@@ -1,0 +1,14 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "script" : "clang main.c -o main "
+    },
+    "run" : {
+      "enabled" : true,
+      "script" : "chmod +x main.c"
+    }
+  },
+  "identifier" : "815104A0-2DE4-4DF0-8899-57C4DC82B5C0",
+  "openLogOnRun" : "success"
+}
