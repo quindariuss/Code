@@ -1,35 +1,21 @@
-import React from 'react';
-import REACTDOM from 'react-dom';
+import react from 'react';
+import reactdom from 'react-dom';
 
-
-
-function Greet(user) {
-	  if (user) {
-		return <h1>Hello, {format(user)}!</h1>;
-	  }
-	  return <h1>Hello, Stranger.</h1>;
+function tick() {
+	  const clock = 
+	  (
+		<div>
+		  <h2>
+		  	It is {new Date().toLocaleTimeString()}.
+		  </h2>
+		</div>
+	  );
+	  
+	  reactdom.render
+	  (
+		  clock,
+		  document.getElementById('root')
+	  );
 	}
-
-const name = 'Quin'
-
-
-function format(user)
-{
-	return 'ser ' + user.first + ' ' + user.last;
-}
-
-const user = 
-{
-	first: 'quin',
-	last:  'woods'	
-};
-
-const app = document.getElementById('app');
-
-REACTDOM.render(
-<div>
-<h1>
-	Hello, {Greet(user)}
-</h1>
-</div>
-	,app);
+	
+	setInterval(tick, 1000);
