@@ -2,7 +2,7 @@
   "actions" : {
     "build" : {
       "enabled" : true,
-      "script" : "clang main.c -o main "
+      "script" : "mpicc main.c -o main -lmpi"
     },
     "run" : {
       "enabled" : true,
