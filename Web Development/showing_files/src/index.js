@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
 import reactdom from 'react-dom';
 
-function Example() {
-	  // Declare a new state variable, which we'll call "count"
-	  const [count, setCount] = useState(0);
+function Count() 
+{
+	const [count, setCount] = useState('');
 	
-	  return (
+	return (
 		<div>
-		  <p>You clicked {count} times</p>
-		  <button onClick={() => setCount(count + 1)}>
-			Click me
+		  <p>
+		  	You clicked {count} times
+		  </p>
+		  <button onClick={() => setCount(count.concat("added"))}>
+		  	Click me
 		  </button>
 		</div>
-	  );
-	}
+	);
+}
 
-reactdom.render(
-  <Example />,
-  document.querySelector('#root')
+reactdom.render
+(
+	<Count/>,
+	document.getElementById('root')
 );
