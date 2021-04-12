@@ -1,38 +1,21 @@
-import react from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState } from 'react';
+import reactdom from 'react-dom';
 
-function Comment(props) {
+function Example() {
+	  // Declare a new state variable, which we'll call "count"
+	  const [count, setCount] = useState(0);
+	
 	  return (
-		<div className="Comment">
-		  <div className="UserInfo">
-			<Avatar />
-			<div className="UserInfo-name">
-			  {props.author.name}
-			</div>
-		  </div>
-		  <div className="Comment-text">
-			{props.text}
-		  </div>
-		  <div className="Comment-date">
-			{formatDate(props.date)}
-		  </div>
+		<div>
+		  <p>You clicked {count} times</p>
+		  <button onClick={() => setCount(count + 1)}>
+			Click me
+		  </button>
 		</div>
 	  );
 	}
-	
-	
-	
-ReactDOM.render
-(
-<h1></h1>,
-document.getElementById('root')
-);
 
-function Avatar(props) {
-    return (
-		<img className="Avatar"
-        src={props.author.avatarUrl}
-        alt={props.author.name} 
-		/>
-	);
-}
+reactdom.render(
+  <Example />,
+  document.querySelector('#root')
+);
