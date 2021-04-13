@@ -3,9 +3,20 @@ import react from 'react';
 function App()
 {
 	return(
-		<div>
-			<h1>Hello World</h1>
-		</div>
+			<Navbar>
+			
+			</Navbar>
+	);
+}
+
+function Navbar()
+{
+	return(
+		<nav className='navbar'>
+			<ul className='navbar-nav'>
+				
+			</ul>
+		</nav>
 	);
 }
 
