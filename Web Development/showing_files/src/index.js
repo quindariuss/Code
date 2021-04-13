@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import reactdom from 'react-dom';
 
-function Count() 
+function State() 
 {
-	const [count, setCount] = useState('');
+	const [state, setState] = useState(false);
 	
 	return (
 		<div>
 		  <p>
-		  	You clicked {count} times
+		  	The State is {state.toString()} 
 		  </p>
-		  <button onClick={() => setCount(count.concat("added"))}>
+		  <button onClick={() => setState(!state)}>
 		  	Click me
 		  </button>
 		</div>
@@ -19,6 +19,6 @@ function Count()
 
 reactdom.render
 (
-	<Count/>,
+	<State/>,
 	document.getElementById('root')
 );
