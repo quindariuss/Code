@@ -1,13 +1,16 @@
 import react from 'react';
+import { ReactComponent as Map} from './icons/map.svg';
+import { ReactComponent as Book} from './icons/book.svg';
+import { ReactComponent as Target} from './icons/target.svg';
+
 
 function App()
 {
 	return(
 			<Navbar>
-				<NavItem icon = '😀'/>
-				<NavItem icon = '😀'/>
-				<NavItem icon = '😀'/>
-				<NavItem icon = '😀'/>
+				<NavItem icon = {<Map/>}/>
+				<NavItem icon = {<Target/>}/>
+				<NavItem icon = {<Book/>}/>
 			</Navbar>
 	);
 }
