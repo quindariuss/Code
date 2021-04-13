@@ -1,24 +1,53 @@
 import React, { useState } from 'react';
-import reactdom from 'react-dom';
+import ReactDOM from 'react-dom';
+import { Container, Button, Alert } from 'react-bootstrap';
+import { CSSTransition } from 'react-transition-group';
 
-function State() 
-{
-	const [state, setState] = useState(false);
-	
-	return (
-		<div>
+import './style.css';
+
+function Example() {
+  const [showButton, setShowButton] = useState(true);
+  const [showMessage, setShowMessage] = useState(false);
+  return (
+	<Container style={{ paddingTop: '2rem' }}>
+	  {showButton && (
+		<Button
+		  onClick={() => setShowMessage(true)}
+		  size="lg"
+		>
+		  Show Message
+		</Button>
+	  )}
+	  <CSSTransition
+		in={showMessage}
+		timeout={300}
+		classNames="alert"
+		unmountOnExit
+		onEnter={() => setShowButton(false)}
+		onExited={() => setShowButton(true)}
+	  >
+		<Alert
+		  variant="primary"
+		  dismissible
+		  onClose={() => setShowMessage(false)}
+		>
+		  <Alert.Heading>
+			Animated alert message
+		  </Alert.Heading>
 		  <p>
-		  	The State is {state.toString()} 
+			This alert message is being transitioned in and
+			out of the DOM.
 		  </p>
-		  <button onClick={() => setState(!state)}>
-		  	Click me
-		  </button>
-		</div>
-	);
+		  <Button onClick={() => setShowMessage(false)}>
+			Close
+		  </Button>
+		</Alert>
+	  </CSSTransition>
+	</Container>
+  );
 }
 
-reactdom.render
-(
-	<State/>,
-	document.getElementById('root')
+ReactDOM.render(
+  <Example />,
+  document.getElementById('root')
 );
