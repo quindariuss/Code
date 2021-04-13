@@ -5,6 +5,9 @@ function App()
 	return(
 			<Navbar>
 				<NavItem icon = '😀'/>
+				<NavItem icon = '😀'/>
+				<NavItem icon = '😀'/>
+				<NavItem icon = '😀'/>
 			</Navbar>
 	);
 }
