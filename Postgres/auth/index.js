@@ -1,4 +1,3 @@
-const { json } = require('body-parser');
 const express = require('express');
 const app = express();
 const {Client} = require('pg');
@@ -11,21 +10,32 @@ const client = new Client
     }
 )
 
+client
+.connect()
+.then(() => console.log('connected'))
+.catch(err => console.error('connection error', err.stack))
 
-
-app.get('/',(req,res)=>
+app.get('/',(req,res) =>
 {
-    client
-    .connect()
-    .then(() => console.log('connected'))
-    .catch(err => console.error('connection error', err.stack))
+  res.send("hello")
 })
 
 app.get('/users',(req, res) => 
 {
-    client.query
-    ('select * from users')
-    .then(console.log)
+    client
+      .query('select * from users')
+      .then
+      (
+          res => 
+          {
+              console.log(res.rows)
+          }
+      )
+      .catch
+      (
+          e => console.error(e.stack)
+      )
+ 
 })
 
 app.listen(4000, ()=>

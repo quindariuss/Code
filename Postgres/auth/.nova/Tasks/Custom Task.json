@@ -1,0 +1,10 @@
+{
+  "actions" : {
+    "run" : {
+      "enabled" : true,
+      "script" : "node index.js"
+    }
+  },
+  "identifier" : "D5B39642-A872-43FB-B2A4-D4B7774B5DB9",
+  "openLogOnRun" : "start"
+}
