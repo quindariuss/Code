@@ -10,6 +10,7 @@ const client = new Client(
 )
 
 client.connect()
+.then
 app.get('/',(req,res) =>
 {
 	res.send('Hello World')

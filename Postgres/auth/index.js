@@ -20,13 +20,14 @@ app.get('/',(req,res) =>
   res.send("hello")
 })
 
-app.get('/users',(req, res) => 
-{
-const { rows } = client.query('select * from users')
-res.send(rows[0])
-console.log(rows[0])
- 
-})
+app.get("/users", async function(req, res, next) {
+  try {
+    const results = await client.query("SELECT * FROM users");
+    return res.json(results.rows);
+  } catch (err) {
+    return next(err);
+  }
+});
 
 app.listen(4000, ()=>
 {
