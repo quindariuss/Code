@@ -22,19 +22,9 @@ app.get('/',(req,res) =>
 
 app.get('/users',(req, res) => 
 {
-    client
-      .query('select * from users')
-      .then
-      (
-          res => 
-          {
-              console.log(res.rows)
-          }
-      )
-      .catch
-      (
-          e => console.error(e.stack)
-      )
+const { rows } = client.query('select * from users')
+res.send(rows[0])
+console.log(rows[0])
  
 })
 
