@@ -4,12 +4,15 @@ import reactdom from 'react-dom';
 function Hello()
 {
 	return(
-	<h1>Hello World<h1>
-)
+		<h1>Hello, Worlds!</h1>
+	)
 }
 
 reactdom.render
 (
-	<Hello />,
-	document.getElementbyId('root')
+	<div>
+	<Hello/>
+	</div>,
+	document.getElementById('root')
 )
+
