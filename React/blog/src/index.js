@@ -1,23 +1,28 @@
 import react from 'react';
 import reactdom from 'react-dom';
+import './app.css';
 
 function Blog(props)
 {
 	return(
 		
-	<div>
+	<div class = "post">
 		<h1>
 			Title: {props.title}
 		</h1>
 		
 		<p>
-			Content: {props.content}
+			Content: 
+			<br  />
+			{props.content}
 		</p>
 	</div>
 	)
 }
 
-const bob = `
+const blogtitle = "et dissentiunt ad cu cum"
+
+const blogcontent = `
 Ne eum erat sea an in ut cu oratio at has te eu ceteros essent sit ad. Hendrerit nihil te nominati option aliquid omnis movet vis sea vis theophrastus ut sea qui qui. Quo adipiscing detracto modo voluptua duo phaedrum placerat at nec postea id clita solum. Ei per splendide paulo ex cu postulant detraxit facilisis dicam atqui id has cum mel appellantur ex. Clita iriure ut nec eruditi ius qui tractatos in mel est aeterno at mea in cu mundi. Est at ei at nominavi adversarium animal ei recteque ne id per quidam solet vel. Commune per nam in eu accusata graecis no cum tincidunt placerat vix vituperata vel delicata audiam.
 
 Eros ei id mel liber regione efficiendi ius copiosae et ne consectetuer audire. Pri argumentum copiosae elitr reprehendunt audiam rationibus equidem deseruisse melius facete has cotidieque. Eu viris cum ipsum graecis persius viris legendos signiferumque an molestiae in tamquam mel sea virtute. Impetus usu verterem modo euismod et feugait contentiones in luptatum vis luptatum ferri agam. Ut sint ne audiam has liber similique dicant ne sumo albucius pri sensibus in. Contentiones hendrerit assentior discere ea consul instructior tota ne an modus volumus referrentur. Voluptua vivendo wisi sea dicunt no malis sit luptatum minim vocent theophrastus quo no. Honestatis vivendo te noluisse argumentum sit ex facilis sanctus omnesque quo ut solet scripserit persius error.
@@ -32,7 +37,8 @@ Aeterno delicatissimi suas nominati harum eam mei ex alterum definitionem ex mag
 reactdom.render
 (
 	<div>
-	<Blog title="A New Blog Post" content={bob}/>
+	<Blog title={blogtitle} content={blogcontent}/>
+	<Blog title={blogtitle} content={blogcontent}/>
 	</div>,
 	document.getElementById('root')
 )
