@@ -7,24 +7,7 @@ import { ChakraProvider, Box, Text, Flex, Button} from "@chakra-ui/react"
 ReactDOM.render(
  <ChakraProvider>
   
-    <Button
-    colorScheme="teal"
-    _hover={{
-      background: "white",
-      color: "teal.500",
-    }}
-  >
-    Hover me
-  </Button>
-  <Box
-    role="group"
-  >
-    <Box
-      _hover={{ fontWeight: 'semibold' }}
-      _groupHover={{ color: 'tomato' }}
-    >
-    </Box>
-  </Box>
+<Box w="100%" h="200px" bgGradient="linear(to-r, green.200, pink.500)" />
 </ChakraProvider>,
   document.getElementById('root')
 );
