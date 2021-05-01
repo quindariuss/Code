@@ -1,15 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ChakraProvider, Box, Text, Flex} from "@chakra-ui/react"
+import { ChakraProvider, Box, Text, Flex, Button} from "@chakra-ui/react"
 
 
 
 ReactDOM.render(
  <ChakraProvider>
   
-     <Flex align="center" justify="center">
-     Flex Container
-     </Flex>
+    <Button
+    colorScheme="teal"
+    _hover={{
+      background: "white",
+      color: "teal.500",
+    }}
+  >
+    Hover me
+  </Button>
+  <Box
+    role="group"
+  >
+    <Box
+      _hover={{ fontWeight: 'semibold' }}
+      _groupHover={{ color: 'tomato' }}
+    >
+    </Box>
+  </Box>
 </ChakraProvider>,
   document.getElementById('root')
 );
