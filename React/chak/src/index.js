@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ChakraProvider, Box} from "@chakra-ui/react"
+import { ChakraProvider, Box, Text, Flex} from "@chakra-ui/react"
 
 
 
 ReactDOM.render(
  <ChakraProvider>
-<h1>
-  Hello World
-</h1>
-<Box m = {2}>Tomato</Box>
+  
+     <Flex align="center" justify="center">
+     Flex Container
+     </Flex>
 </ChakraProvider>,
   document.getElementById('root')
 );
