@@ -2,9 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ChakraProvider } from "@chakra-ui/react"
 import { Heading } from "@chakra-ui/react"
-import { Button, ButtonGroup, Divider, Text,UnorderedList, ListItem } from "@chakra-ui/react"
+import { Button, ButtonGroup, Divider, Text,UnorderedList, ListItem, ColorModeScript, toggleColorMode, colorMode } from "@chakra-ui/react"
 import { useColorModeValue } from "@chakra-ui/react"
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react"
+import theme from "./theme"
+
 
 
 
@@ -55,6 +57,10 @@ function Tabby()
 }
 ReactDOM.render(
  <ChakraProvider>
+ <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+ <Button onClick={toggleColorMode}>
+ Toggle {colorMode === "light" ? "Dark" : "Light"}
+</Button>
    <Heading size="3xl">Quin'darius Lyles-Woods</Heading>
    <Heading color="gray" size="3xl">Software Engineer</Heading>
    <Heading color="gray.400" size="2xl">Based in Alpharetta, Ga</Heading>
