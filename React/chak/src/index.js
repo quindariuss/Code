@@ -26,6 +26,19 @@ const breakpoints = createBreakpoints({
   "2xl": "96em",
 })
 
+// Request (GET http://localhost:3000/todos)
+fetch("http://localhost:3000/todos", {
+      "method": "GET",
+      "headers": {}
+})
+.then((res) => res.text())
+.then(console.log.bind(console))
+.catch(console.error.bind(console));
+
+
+
+
+
 ReactDOM.render(
    <ChakraProvider>
 <Menu isLazy>
