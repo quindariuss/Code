@@ -9,8 +9,18 @@ import
 	Stack,
 	Image,
 	HStack,
+	Tabs,
+	TabList,
+	Tab,
+	TabPanels,
+	TabPanel,
 	extendTheme,
 	ColorModeScript,
+	Accordion,
+	  AccordionItem,
+	  AccordionButton,
+	  AccordionPanel,
+	  AccordionIcon,
 	SimpleGrid,
 	TableCaption,
 	Thead,
@@ -123,8 +133,8 @@ function Hours()
 	</Center>
 	)
 }
-
-function Lightswitch() {
+function Lightswitch()
+{
 	  const { colorMode, toggleColorMode } = useColorMode()
 	  return (
 		<header>
@@ -134,17 +144,11 @@ function Lightswitch() {
 		</header>
 	  )
 	}
-	
-reactdom.render
-(
-	
-	<ChakraProvider>
-	<ColorModeScript initialColorMode={theme.config.initialColorMode} />
-	<Title/>
-	<Center>
-	<Lightswitch/>
-	</Center>
-	<Center>
+function Staff()
+{
+	return(
+		<div>
+		<Center>
 		<Heading>
 			Meet The Crew
 		</Heading>
@@ -155,6 +159,112 @@ reactdom.render
 	  <Box borderRadius='md' bg="tomato" height="200px"></Box>
 	  <Box borderRadius='md' bg="tomato" height="200px"></Box>
 	</SimpleGrid>
+	</div>
+	)
+}
+	
+reactdom.render
+(
+	
+	<ChakraProvider>
+	<ColorModeScript initialColorMode={theme.config.initialColorMode} />
+	<Title/>
+	<Center>
+	<Lightswitch/>
+	</Center>
+	<Staff/>
+	<Center>
+	<Heading>
+	Services
+	</Heading>
+	</Center>
+	<Center>
+
+		<Box  borderWidth='2px' borderRadius='md' boxShadow='md' width='90%'>
+			<Tabs isFitted variant="enclosed">
+			  <TabList mb="1em">
+				<Tab>Dog</Tab>
+				<Tab>Cat</Tab>
+			  </TabList>
+			  <TabPanels>
+				<TabPanel>
+				  <Accordion allowToggle>
+					<AccordionItem>
+					  <h2>
+						<AccordionButton>
+						  <Box flex="1" textAlign="left">
+							Section 1 title
+						  </Box>
+						  <AccordionIcon />
+						</AccordionButton>
+					  </h2>
+					  <AccordionPanel pb={4}>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+						veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+						commodo consequat.
+					  </AccordionPanel>
+					</AccordionItem>
+				  
+					<AccordionItem>
+					  <h2>
+						<AccordionButton>
+						  <Box flex="1" textAlign="left">
+							Section 2 title
+						  </Box>
+						  <AccordionIcon />
+						</AccordionButton>
+					  </h2>
+					  <AccordionPanel pb={4}>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+						veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+						commodo consequat.
+					  </AccordionPanel>
+					</AccordionItem>
+				  </Accordion>
+				</TabPanel>
+				<TabPanel>
+				  <Accordion allowToggle>
+					<AccordionItem>
+					  <h2>
+						<AccordionButton>
+						  <Box flex="1" textAlign="left">
+							Section 1 title
+						  </Box>
+						  <AccordionIcon />
+						</AccordionButton>
+					  </h2>
+					  <AccordionPanel pb={4}>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+						veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+						commodo consequat.
+					  </AccordionPanel>
+					</AccordionItem>
+				  
+					<AccordionItem>
+					  <h2>
+						<AccordionButton>
+						  <Box flex="1" textAlign="left">
+							Section 2 title
+						  </Box>
+						  <AccordionIcon />
+						</AccordionButton>
+					  </h2>
+					  <AccordionPanel pb={4}>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+						veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+						commodo consequat.
+					  </AccordionPanel>
+					</AccordionItem>
+				  </Accordion>
+				</TabPanel>
+			  </TabPanels>
+			</Tabs>
+		</Box>
+	</Center>
 
 	<Hours/>
 	</ChakraProvider>,
