@@ -15,14 +15,19 @@ import
 	TabPanels,
 	TabPanel,
 	extendTheme,
+	List,
+	ListItem,
+	UnorderedList,
+	IconButton,
 	ColorModeScript,
 	Accordion,
-	  AccordionItem,
-	  AccordionButton,
-	  AccordionPanel,
-	  AccordionIcon,
+	AccordionItem,
+	AccordionButton,
+	AccordionPanel,
+	AccordionIcon,
 	SimpleGrid,
 	TableCaption,
+	AspectRatio,
 	Thead,
 	Tbody,
 	Td,
@@ -32,9 +37,20 @@ import
 	Text,
 	useColorMode,
 	Button,
+	ButtonGroup,
 	Box,
 	Heading
 } from '@chakra-ui/react'
+
+import { createBreakpoints } from "@chakra-ui/theme-tools"
+
+const breakpoints = createBreakpoints({
+  sm: "30em",
+  md: "48em",
+  lg: "62em",
+  xl: "80em",
+  "2xl": "96em",
+})
 
 const config = {
 	  initialColorMode: "light",
@@ -48,16 +64,7 @@ function Title()
 {
 	return (
 		<div>
-			<Center>
-				<Heading size='3xl'>	
-					North Roswell
-				</Heading>
-			</Center>
-			<Center>
-				<Heading size='3xl'>
-					Veterinary Clinic
-				</Heading>
-			</Center>
+			
 			<Center>
 			<Box borderRadius='md' width='90%' padding='2' textAlign='center'>
 			<Center>
@@ -83,7 +90,7 @@ function Hours()
 {
 	return(
 		<Center >
-		<Box borderWidth='1px'boxShadow='base' margin='5%' borderRadius='md' w={[300, 400, 560]} bottom="0">
+		<Box borderWidth='1px'boxShadow='base' margin='2%' borderRadius='md' w={['90%', '75%', '50%']} bottom="0">
 			<Table variant='simple' size='sm'>
 				<TableCaption textAlign='center'>
 					Hours of Operation 
@@ -162,115 +169,221 @@ function Staff()
 	</div>
 	)
 }
+function ServiceName(props)
+{
+	return(
+		<AccordionItem>
+		<h2>
+		  <AccordionButton>
+			<Box flex="1" textAlign="left">
+			  {props.title}
+			</Box>
+			<AccordionIcon />
+		  </AccordionButton>
+		</h2>
+		<AccordionPanel pb={4}>
+		 <UnorderedList>
+			   
+		 </UnorderedList>
+		</AccordionPanel>
+	  </AccordionItem>
+	)
+}
+
+function ServiceTitle(props)
+{
+	return(
+		<h2>
+		<AccordionButton>
+		  <Box flex="1" textAlign="left">
+			{props.title}
+		  </Box>
+		  <AccordionIcon />
+		</AccordionButton>
+	  </h2>
+	)
+}
+
+function Services()
+{
+	return(
+		<div>
+		<Center>
+		<Heading>
+		Services
+		</Heading>
+		</Center>
+		<Center>
+		<Box  borderWidth='2px' borderRadius='md' boxShadow='md' w={['90%', '90%', '75%']}>
+			<Accordion allowToggle>
+				<AccordionItem>
+				  <ServiceTitle title='Preventive Care'/>
+				  <AccordionPanel pb={4}>
+					 <UnorderedList>
+						<ListItem>Physical Exams</ListItem>
+						<ListItem>Yearly vaccines</ListItem>
+						<ListItem>Geriatric care</ListItem>
+						<ListItem>Routine blood work and drug monitoring blood work</ListItem>
+						<ListItem>Health certificates</ListItem>
+						<ListItem>Vaccines and boosters</ListItem>
+					 </UnorderedList>
+					</AccordionPanel>
+				</AccordionItem>
+				
+				<AccordionItem>
+				  <ServiceTitle title='Routine Surgery'/>
+				  <AccordionPanel pb={4}>
+					 <UnorderedList>
+						<ListItem>Spay</ListItem>
+						<ListItem>Neuter</ListItem>
+						<ListItem>Declaw</ListItem>
+						<ListItem>Dental Cleaning and Extractions</ListItem>
+					 </UnorderedList>
+					</AccordionPanel>
+				</AccordionItem>
+				
+				<AccordionItem>
+				  <ServiceTitle title='Specialized Surgery'/>
+				  <AccordionPanel pb={4}>
+					 <UnorderedList>
+						<ListItem>Cruciate Repairs</ListItem>
+						<ListItem>FHO</ListItem>
+						<ListItem> Bone Repairs </ListItem>
+						<ListItem>Ear surgery (Hematoma repairs / ZEP procedure / Total ear canal ablation)</ListItem>
+						<ListItem> Growth removals (malignant and benign) </ListItem>
+						<ListItem> Eye surgery (Entropion / Ectropion / Enucleation / Cherry Eye) </ListItem>
+						<ListItem> Exploratory </ListItem>
+					 </UnorderedList>
+					</AccordionPanel>
+				  </AccordionItem>
+				  
+				<AccordionItem>
+				  <ServiceTitle title='Chronic and Acute Medical Problems'/>
+				  <AccordionPanel pb={4}>
+					 <UnorderedList>
+						<ListItem> Arthritis and other orthopedic problems </ListItem> 
+						<ListItem> Allergies and other skin diseases </ListItem>
+						<ListItem> Ear disease </ListItem>
+						<ListItem> Eye disease </ListItem>
+						<ListItem> GI disease </ListItem>
+						<ListItem> Heart and Lung disease </ListItem>
+						<ListItem> Endocrine/Hormonal disease </ListItem>
+						<ListItem> Neurological disease </ListItem>
+						<ListItem> Metabolic disease </ListItem>
+						<ListItem> Trauma </ListItem>
+					 </UnorderedList>
+					</AccordionPanel>
+				  </AccordionItem>
+				  
+				<AccordionItem>
+				  <ServiceTitle title='In-House and Outside Lab Testing'/>
+				  <AccordionPanel pb={4}>
+					 <UnorderedList>
+						<ListItem> Heartworm exams </ListItem>
+						<ListItem> Intestinal Parastie exams </ListItem>
+						<ListItem> Feline Leukemia and FIV testing </ListItem>
+						<ListItem> Urinalysis </ListItem>
+						<ListItem> Cytology </ListItem>
+						<ListItem> Histopath </ListItem>
+						<ListItem> Bloodwork (routine, drug monitoring, and specialized for above mentioned diseases) </ListItem>
+					 </UnorderedList>
+					</AccordionPanel>
+				  </AccordionItem>
+				  
+				<AccordionItem>
+				  <ServiceTitle title='Oncology'/>
+				  <AccordionPanel pb={4}>
+					 <UnorderedList>
+						<ListItem> Diagnosis </ListItem>
+						<ListItem> Surgical Excision </ListItem>
+						<ListItem> Chemotherpy </ListItem>
+						<ListItem> Hospice </ListItem>
+					 </UnorderedList>
+					</AccordionPanel>
+				</AccordionItem>
+				
+				<AccordionItem>
+				  <ServiceTitle title='Radiology'/>
+				  <AccordionPanel pb={4}>
+					 <UnorderedList>
+						 <ListItem> X-Ray </ListItem>
+						 <ListItem> OFA </ListItem>
+						 <ListItem> Barium study </ListItem>
+						 <ListItem> Cystogram </ListItem>
+						 <ListItem> Ultrasound </ListItem>
+					 </UnorderedList>
+					</AccordionPanel>
+				</AccordionItem>
+				
+				<AccordionItem>
+				  <ServiceTitle title='Heartworm and Flea'/>
+				  <AccordionPanel pb={4}>
+					 <UnorderedList>
+						 <ListItem> Prevention and education </ListItem>
+						 <ListItem> Heartworm treatment </ListItem>i
+					 </UnorderedList>
+					</AccordionPanel>
+				</AccordionItem>
+				
+				<AccordionItem>
+				  <ServiceTitle title='Animal Husbandry'/>
+				  <AccordionPanel pb={4}>
+					 <UnorderedList>
+						<ListItem> Boarding </ListItem>
+						<ListItem> Anal gland expression </ListItem>
+						<ListItem> Nail Trims </ListItem>
+						<ListItem> Bathing </ListItem>
+					 </UnorderedList>
+					</AccordionPanel>
+				</AccordionItem>
+			</Accordion>
+		</Box>
+	</Center>
+	</div>
+	)
+}
 	
 reactdom.render
 (
 	
 	<ChakraProvider>
 	<ColorModeScript initialColorMode={theme.config.initialColorMode} />
+	<Center>
+	<Heading size='4xl'>	
+		North Roswell
+	</Heading>
+</Center>
+<Center>
+	<Heading size='3xl'>
+		Veterinary Clinic
+	</Heading>
+</Center>
 	<Title/>
 	<Center>
 	<Lightswitch/>
 	</Center>
 	<Staff/>
+	<Services/>
 	<Center>
-	<Heading>
-	Services
-	</Heading>
+		<Heading>
+			Contact Information
+		</Heading>
 	</Center>
-	<Center>
-
-		<Box  borderWidth='2px' borderRadius='md' boxShadow='md' width='90%'>
-			<Tabs isFitted variant="enclosed">
-			  <TabList mb="1em">
-				<Tab>Dog</Tab>
-				<Tab>Cat</Tab>
-			  </TabList>
-			  <TabPanels>
-				<TabPanel>
-				  <Accordion allowToggle>
-					<AccordionItem>
-					  <h2>
-						<AccordionButton>
-						  <Box flex="1" textAlign="left">
-							Section 1 title
-						  </Box>
-						  <AccordionIcon />
-						</AccordionButton>
-					  </h2>
-					  <AccordionPanel pb={4}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-						veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-						commodo consequat.
-					  </AccordionPanel>
-					</AccordionItem>
-				  
-					<AccordionItem>
-					  <h2>
-						<AccordionButton>
-						  <Box flex="1" textAlign="left">
-							Section 2 title
-						  </Box>
-						  <AccordionIcon />
-						</AccordionButton>
-					  </h2>
-					  <AccordionPanel pb={4}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-						veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-						commodo consequat.
-					  </AccordionPanel>
-					</AccordionItem>
-				  </Accordion>
-				</TabPanel>
-				<TabPanel>
-				  <Accordion allowToggle>
-					<AccordionItem>
-					  <h2>
-						<AccordionButton>
-						  <Box flex="1" textAlign="left">
-							Section 1 title
-						  </Box>
-						  <AccordionIcon />
-						</AccordionButton>
-					  </h2>
-					  <AccordionPanel pb={4}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-						veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-						commodo consequat.
-					  </AccordionPanel>
-					</AccordionItem>
-				  
-					<AccordionItem>
-					  <h2>
-						<AccordionButton>
-						  <Box flex="1" textAlign="left">
-							Section 2 title
-						  </Box>
-						  <AccordionIcon />
-						</AccordionButton>
-					  </h2>
-					  <AccordionPanel pb={4}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-						veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-						commodo consequat.
-					  </AccordionPanel>
-					</AccordionItem>
-				  </Accordion>
-				</TabPanel>
-			  </TabPanels>
-			</Tabs>
-		</Box>
-	</Center>
-
+	
+	
+	
 	<Hours/>
 	</ChakraProvider>,
 	document.getElementById('root')
 )
 
 
-
+// <Center>
+// <Box w={['90%', '75%', '50%']}>
+//   <iframe
+// 	title="map"
+// 	src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d105704.0537658489!2d-84.38824092351524!3d34.11430597197142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d34.1676506!2d-84.3436871!4m5!1s0x88f574f12711f227%3A0x43484662551bb919!2snorth%20roswell%20veterinary%20clinic!3m2!1d34.0602126!2d-84.3255851!5e0!3m2!1sen!2sus!4v1620402657607!5m2!1sen!2sus"
+// 	objectFit='cover'/>
+// </Box>
+// </Center>
 	
