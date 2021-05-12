@@ -1,0 +1,9 @@
+[submodule "Xcode/Comte"]
+	path = Xcode/Comte
+	url = https://github.com/quinwoods/Code
+[submodule "Xcode/HelloCoreData"]
+	path = Xcode/HelloCoreData
+	url = https://github.com/quinwoods/Code
+[submodule "Xcode/SwiftUI"]
+	path = Xcode/SwiftUI
+	url = https://github.com/quinwoods/Code

@@ -1,6 +1,14 @@
 import react from 'react'
 import reactdom from 'react-dom'
-import 
+import david from './david.jpeg'
+import jan from './jan.jpeg'
+import jane from './jane.jpeg'
+import
+{
+	SunIcon,
+	MoonIcon
+} from '@chakra-ui/icons'
+import
 {
 	ChakraProvider,
 	Center,
@@ -42,29 +50,28 @@ import
 	Heading
 } from '@chakra-ui/react'
 
-import { createBreakpoints } from "@chakra-ui/theme-tools"
-
-const breakpoints = createBreakpoints({
-  sm: "30em",
-  md: "48em",
-  lg: "62em",
-  xl: "80em",
-  "2xl": "96em",
-})
-
 const config = {
-	  initialColorMode: "light",
-	  useSystemColorMode: false,
+	  initialColorMode: "system",
+	  useSystemColorMode: true,
 	}
-	
+
 const theme = extendTheme({ config })
 
-	
+
 function Title()
 {
 	return (
 		<div>
-			
+			<Center marginTop='10%'>
+				<Heading size='3xl'>
+					North Roswell
+				</Heading>
+			</Center>
+			<Center>
+				<Heading size='3xl'>
+					Veterinary Clinic
+				</Heading>
+			</Center>
 			<Center>
 			<Box borderRadius='md' width='90%' padding='2' textAlign='center'>
 			<Center>
@@ -73,7 +80,7 @@ function Title()
 				</Text>
 			</Center>
 				<Badge colorScheme='red' margin='2%'>
-					AAHA Accredited 
+					AAHA Accredited
 				</Badge>
 				<Badge colorScheme='blue' margin='2%'>
 					Dog Care
@@ -86,14 +93,22 @@ function Title()
 	</div>
 	)
 }
+function Hello()
+{
+	return(
+		<h1>
+			Hello
+		</h1>
+	)
+}
 function Hours()
 {
 	return(
 		<Center >
-		<Box borderWidth='1px'boxShadow='base' margin='2%' borderRadius='md' w={['90%', '75%', '50%']} bottom="0">
+		<Box borderWidth='1px'boxShadow='base' margin='2%' borderRadius='md' w={['90%', '60%', '40%']} bottom="0">
 			<Table variant='simple' size='sm'>
 				<TableCaption textAlign='center'>
-					Hours of Operation 
+					Hours of Operation
 				</TableCaption>
 				<Thead>
 					<Tr>
@@ -145,8 +160,8 @@ function Lightswitch()
 	  const { colorMode, toggleColorMode } = useColorMode()
 	  return (
 		<header>
-		  <Button onClick={toggleColorMode}>
-			Toggle {colorMode === "light" ? "Dark" : "Light"}
+		  <Button pos='absolute' top='1' right='1' leftIcon={colorMode === "light" ? <MoonIcon/> : <SunIcon/>} onClick={toggleColorMode}>
+			 {colorMode === "light" ? "Dark" : "Light"}
 		  </Button>
 		</header>
 	  )
@@ -159,13 +174,51 @@ function Staff()
 		<Heading>
 			Meet The Crew
 		</Heading>
-		
 	</Center>
-	<SimpleGrid minChildWidth="300" height='auto' spacing="40px" margin='5%'>
-	  <Box borderRadius='md' bg="tomato" height="200px"></Box>
-	  <Box borderRadius='md' bg="tomato" height="200px"></Box>
-	  <Box borderRadius='md' bg="tomato" height="200px"></Box>
-	</SimpleGrid>
+<SimpleGrid minChildWidth="200px" spacing="40px" margin='5%'>
+  <Box borderWidth="1px" overflow='hidden' maxW='sm' borderRadius='md'  >
+  <Image boxSize='sm' src={david}/>
+  <Box margin='1%'>
+	  <Badge margin='1%'>
+		  David Shepard
+	  </Badge>
+	  <Badge margin='1%'>
+			Doctor of Veterinarian Medicine
+		</Badge>
+		<Badge margin='1%'>
+			  Owner
+		  </Badge>
+	  </Box>
+  </Box>
+  <Box borderWidth="1px" overflow='hidden' maxW='sm' borderRadius='md'  >
+		<Image boxSize='sm' src={jan}/>
+		<Box margin='1%'>
+			<Badge margin='1%'>
+				Jan Laketa
+			</Badge>
+			  <Badge margin='1%'>
+					Doctor of Veterinarian Medicine
+				</Badge>
+
+			  </Box>
+		</Box>
+		<Box borderWidth="1px" overflow='hidden' maxW='sm' borderRadius='md'  >
+			<Image boxSize='sm' src={jane}/>
+			<Box margin='1%'>
+				<Badge margin='1%'>
+					Jane Sowden
+				</Badge>
+				  <Badge margin='1%'>
+						Veterinary Technician
+					</Badge>
+					<Badge margin='1%'>
+						  Hospital Manager
+					  </Badge>
+				  </Box>
+			</Box>
+
+
+</SimpleGrid>
 	</div>
 	)
 }
@@ -183,7 +236,7 @@ function ServiceName(props)
 		</h2>
 		<AccordionPanel pb={4}>
 		 <UnorderedList>
-			   
+
 		 </UnorderedList>
 		</AccordionPanel>
 	  </AccordionItem>
@@ -214,7 +267,7 @@ function Services()
 		</Heading>
 		</Center>
 		<Center>
-		<Box  borderWidth='2px' borderRadius='md' boxShadow='md' w={['90%', '90%', '75%']}>
+		<Box  borderWidth='2px' borderRadius='md' boxShadow='base' w={['90%', '90%', '75%']}>
 			<Accordion allowToggle>
 				<AccordionItem>
 				  <ServiceTitle title='Preventive Care'/>
@@ -229,7 +282,7 @@ function Services()
 					 </UnorderedList>
 					</AccordionPanel>
 				</AccordionItem>
-				
+
 				<AccordionItem>
 				  <ServiceTitle title='Routine Surgery'/>
 				  <AccordionPanel pb={4}>
@@ -241,7 +294,7 @@ function Services()
 					 </UnorderedList>
 					</AccordionPanel>
 				</AccordionItem>
-				
+
 				<AccordionItem>
 				  <ServiceTitle title='Specialized Surgery'/>
 				  <AccordionPanel pb={4}>
@@ -256,12 +309,12 @@ function Services()
 					 </UnorderedList>
 					</AccordionPanel>
 				  </AccordionItem>
-				  
+
 				<AccordionItem>
 				  <ServiceTitle title='Chronic and Acute Medical Problems'/>
 				  <AccordionPanel pb={4}>
 					 <UnorderedList>
-						<ListItem> Arthritis and other orthopedic problems </ListItem> 
+						<ListItem> Arthritis and other orthopedic problems </ListItem>
 						<ListItem> Allergies and other skin diseases </ListItem>
 						<ListItem> Ear disease </ListItem>
 						<ListItem> Eye disease </ListItem>
@@ -274,7 +327,7 @@ function Services()
 					 </UnorderedList>
 					</AccordionPanel>
 				  </AccordionItem>
-				  
+
 				<AccordionItem>
 				  <ServiceTitle title='In-House and Outside Lab Testing'/>
 				  <AccordionPanel pb={4}>
@@ -289,7 +342,7 @@ function Services()
 					 </UnorderedList>
 					</AccordionPanel>
 				  </AccordionItem>
-				  
+
 				<AccordionItem>
 				  <ServiceTitle title='Oncology'/>
 				  <AccordionPanel pb={4}>
@@ -301,7 +354,7 @@ function Services()
 					 </UnorderedList>
 					</AccordionPanel>
 				</AccordionItem>
-				
+
 				<AccordionItem>
 				  <ServiceTitle title='Radiology'/>
 				  <AccordionPanel pb={4}>
@@ -314,7 +367,7 @@ function Services()
 					 </UnorderedList>
 					</AccordionPanel>
 				</AccordionItem>
-				
+
 				<AccordionItem>
 				  <ServiceTitle title='Heartworm and Flea'/>
 				  <AccordionPanel pb={4}>
@@ -324,7 +377,7 @@ function Services()
 					 </UnorderedList>
 					</AccordionPanel>
 				</AccordionItem>
-				
+
 				<AccordionItem>
 				  <ServiceTitle title='Animal Husbandry'/>
 				  <AccordionPanel pb={4}>
@@ -342,48 +395,58 @@ function Services()
 	</div>
 	)
 }
-	
+
 reactdom.render
 (
-	
+
 	<ChakraProvider>
 	<ColorModeScript initialColorMode={theme.config.initialColorMode} />
-	<Center>
-	<Heading size='4xl'>	
-		North Roswell
-	</Heading>
-</Center>
-<Center>
-	<Heading size='3xl'>
-		Veterinary Clinic
-	</Heading>
-</Center>
 	<Title/>
-	<Center>
 	<Lightswitch/>
-	</Center>
 	<Staff/>
 	<Services/>
 	<Center>
 		<Heading>
-			Contact Information
+			Reach Us
 		</Heading>
 	</Center>
-	
-	
-	
+
+	<Box borderRadius='md' w={['90%', '60%', '40%']} margin='5%'  borderWidth='1px'>
+
+				<Text textAlign='center'>
+				11490 Alpharetta Hwy,
+			</Text>
+			<Text textAlign='center'>
+				Roswell, GA
+			</Text>
+			<Text textAlign='center'>
+				30076
+			</Text>
+
+		    <Center>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13221.451244199436!2d-84.3255851!3d34.0602126!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x43484662551bb919!2sNorth%20Roswell%20Veterinary%20Clinic!5e0!3m2!1sen!2sus!4v1620427134830!5m2!1sen!2sus"  />
+
+				</Center>
+
+
+		<Center>
+				<ButtonGroup margin='1%' marginBottom='5' marginTop='5'>
+			<Button>
+				Phone
+			</Button>
+			<Button>
+				Email
+			</Button>
+			<Button colorScheme='facebook'>
+				Facebook
+			</Button>
+			</ButtonGroup>
+			</Center>
+			</Box>
 	<Hours/>
 	</ChakraProvider>,
 	document.getElementById('root')
 )
 
 
-// <Center>
-// <Box w={['90%', '75%', '50%']}>
-//   <iframe
-// 	title="map"
-// 	src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d105704.0537658489!2d-84.38824092351524!3d34.11430597197142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d34.1676506!2d-84.3436871!4m5!1s0x88f574f12711f227%3A0x43484662551bb919!2snorth%20roswell%20veterinary%20clinic!3m2!1d34.0602126!2d-84.3255851!5e0!3m2!1sen!2sus!4v1620402657607!5m2!1sen!2sus"
-// 	objectFit='cover'/>
-// </Box>
-// </Center>
-	
+

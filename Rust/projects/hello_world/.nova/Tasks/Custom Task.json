@@ -1,0 +1,18 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "script" : "rustc"
+    },
+    "clean" : {
+      "enabled" : true,
+      "script" : "cargo fmt"
+    },
+    "run" : {
+      "enabled" : true,
+      "script" : ".\/main"
+    }
+  },
+  "identifier" : "A1D95F5D-5E0A-4BA0-8D07-5BB15089BA03",
+  "openLogOnRun" : "start"
+}

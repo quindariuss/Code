@@ -6,3 +6,15 @@
 //
 
 import Foundation
+import CoreData
+
+class StorageProvider
+{
+     static var standard = StorageProvider()
+    let persistentContainer : NSPersistentContainer
+    
+    init() {
+        ValueTransformer.setValueTransformer(UIImageTransformer(), forName: NSValueTransformerName("UIImageTransformer"))
+        persistentContainer = NSPersistentContainer(name: "Model")
+    }
+}

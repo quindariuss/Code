@@ -1,0 +1,14 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "script" : "cargo build"
+    },
+    "run" : {
+      "enabled" : true,
+      "script" : ".\/target\/debug\/hello_cargo"
+    }
+  },
+  "identifier" : "A2353C59-ED70-4804-83BF-D817EA69590D",
+  "openLogOnRun" : "start"
+}

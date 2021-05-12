@@ -12,7 +12,7 @@ import theme from "./theme"
 
 function Tabby()
 {
- 
+
   return(
     <Tabs  isFitted variant="enclosed">
      <TabList mb="1em">
@@ -20,10 +20,10 @@ function Tabby()
        <Tab>Projects</Tab>
        <Tab>Contact</Tab>
      </TabList>
-     
+
      <TabPanels>
        <TabPanel>
-         <Text>Hello Internet Browser, I like to make software, interwork systems, and build cool things. When I am not making software I am most likely doing these things in no particulary order: </Text>
+         <Text>Hello Internet Browser, I like to make software, interwork systems, and build cool things. When I am not making software I am most likely doing these things in no particulary order:  </Text>
           <UnorderedList>
           <ListItem>Reading</ListItem>
           <ListItem>Writing</ListItem>
@@ -44,11 +44,11 @@ function Tabby()
             <Divider/>
            <Heading>Founder: Political Platform</Heading>
             <Divider/>
-       
+
        </TabPanel>
        <TabPanel>
         <Text>Phone Number: 704-470-7036</Text>
-        <Text>Github: quinwoods</Text>
+        <Text>Github: https://quinwoods</Text>
         <Text>Email: quinwoodz@gmail.com</Text>
       </TabPanel>
      </TabPanels>
@@ -57,20 +57,16 @@ function Tabby()
 }
 ReactDOM.render(
  <ChakraProvider>
- <ColorModeScript initialColorMode={theme.config.initialColorMode} />
- <Button onClick={toggleColorMode}>
- Toggle {colorMode === "light" ? "Dark" : "Light"}
-</Button>
    <Heading size="3xl">Quin'darius Lyles-Woods</Heading>
    <Heading color="gray" size="3xl">Software Engineer</Heading>
    <Heading color="gray.400" size="2xl">Based in Alpharetta, Ga</Heading>
    <Tabby/>
-     
-   
-  
+
+
+
  </ChakraProvider>,
- 
-   
+
+
   document.getElementById('root')
 );
 

@@ -1,0 +1,11 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "script" : "npm start"
+    }
+  },
+  "buildBeforeRunning" : true,
+  "identifier" : "247B643F-874E-45FB-B300-F25F70F6ECBC",
+  "openLogOnRun" : "start"
+}
