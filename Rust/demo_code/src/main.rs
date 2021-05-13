@@ -1,7 +1,5 @@
 fn main()
 {
-    let c = 'z';
-    let z = 'ź';
-    let cat = '😺';
-    println!("The c {} the z {} the cat {}", c, z , cat);
+    let tup: (i32, f64, u8) = (500, 6.4 1);
+    println!("The tup is {}", tup);
 }
