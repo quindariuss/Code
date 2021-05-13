@@ -1,9 +1,8 @@
 fn main()
 {
-    let spaces = "    ";
+    let mut spaces = "    ";
     println!("spaces is {}", spaces);
-    let spaces = spaces.len();
+    spaces = spaces.len();
     println!("spaces is {}", spaces);
     println!("finished");
-
 }
