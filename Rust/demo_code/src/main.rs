@@ -1,9 +1,7 @@
 fn main()
 {
-    let t = true;
-
-    let f: bool = false;
-
-    println!("t is {}", t);
-    println!("f is {}", f);
+    let c = 'z';
+    let z = 'ź';
+    let cat = '😺';
+    println!("The c {} the z {} the cat {}", c, z , cat);
 }
