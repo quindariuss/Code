@@ -1,21 +1,12 @@
 fn main()
 {
-    let number = 6;
-
-    if number % 4 == 0
-    {
-        println!("number is divisable by 4");
+    let condition = true;
+    let numner = if condition {
+        5
     }
-        else if number % 3 == 0
+        else
         {
-            println!("number is divisable by 3");
-        }
-            else if number % 2 == 0
-            {
-                println!("number is divisable by 2");
-            }
-                else
-                {
-                    println!("the numbner is not divisable by 4,3, or 2");
-                }
+            6
+        };
+    println!("The value of number is: {}", number);
 }
