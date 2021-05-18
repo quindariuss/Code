@@ -2,10 +2,10 @@
   "actions" : {
     "build" : {
       "enabled" : true,
-      "script" : "git commit -a -m \"commit\""
+      "script" : "cargo build\ngit add ."
     },
     "clean" : {
-      "enabled" : true,
+      "enabled" : false,
       "script" : "git add ."
     },
     "run" : {
