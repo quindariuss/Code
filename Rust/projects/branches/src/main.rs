@@ -1,7 +1,7 @@
 fn main()
 {
     let condition = true;
-    let numner = if condition {
+    let number = if condition {
         5
     }
         else
