@@ -9,5 +9,6 @@
       "script" : "cargo run"
     }
   },
+  "buildBeforeRunning" : true,
   "identifier" : "8BDCE601-F447-4CF0-89C6-7134884885F1"
 }

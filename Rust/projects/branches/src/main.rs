@@ -1,12 +1,8 @@
 fn main() {
-    let number = 3;
+    let number = 7;
 
-    if number < 5
+    if number
     {
-        println!("condition is true");
+        println!("number was three");
     }
-        else
-        {
-            println!("condition was false");
-        }
 }
