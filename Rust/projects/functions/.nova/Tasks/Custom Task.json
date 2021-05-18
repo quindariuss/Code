@@ -7,8 +7,13 @@
     "clean" : {
       "enabled" : true,
       "script" : "git add ."
+    },
+    "run" : {
+      "enabled" : true,
+      "script" : "cargo run"
     }
   },
+  "buildBeforeRunning" : true,
   "identifier" : "307BC9DB-4606-4587-A279-989F334D0CCC",
   "openLogOnRun" : "start"
 }
