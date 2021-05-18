@@ -1,12 +1,12 @@
 fn main()
 {
-    let mut number = 3;
+    let a = [10,20,30,40,50];
+    let mut index = 0;
 
-    while number != 0
+    while index < 5
     {
-        println!("{}!", number);
-        number -= 1;
-    }
+        println!("The value is: {}", a[index]);
 
-    println!("LiftOFF!");
+        index += 1;
+    }
 }
