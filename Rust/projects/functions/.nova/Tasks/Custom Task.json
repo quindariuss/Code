@@ -1,0 +1,14 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "script" : "git commit -a -m \"commit\""
+    },
+    "clean" : {
+      "enabled" : true,
+      "script" : "git add ."
+    }
+  },
+  "identifier" : "307BC9DB-4606-4587-A279-989F334D0CCC",
+  "openLogOnRun" : "start"
+}
