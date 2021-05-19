@@ -10,5 +10,6 @@
     }
   },
   "buildBeforeRunning" : true,
-  "identifier" : "FAF72822-9265-44EF-90B6-B401499EC131"
+  "identifier" : "FAF72822-9265-44EF-90B6-B401499EC131",
+  "openLogOnRun" : "start"
 }
