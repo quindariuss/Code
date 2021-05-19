@@ -1,0 +1,14 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "script" : "git add . "
+    },
+    "run" : {
+      "enabled" : true,
+      "script" : "cargo run"
+    }
+  },
+  "buildBeforeRunning" : true,
+  "identifier" : "FAF72822-9265-44EF-90B6-B401499EC131"
+}
