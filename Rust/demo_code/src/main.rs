@@ -4,6 +4,8 @@ fn main()
 
     takes_ownership(s);
 
+    println!("{}", s);
+
     let x = 5;
 
     makes_copy(x);
