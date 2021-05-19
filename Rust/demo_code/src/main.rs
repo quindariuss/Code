@@ -1,6 +1,6 @@
 fn main()
 {
-    let x = 5;
-    let y = x;
-    println!("x is {}",x);
+    let s1 = String::from("hello");
+    let s2 = s1;
+    println!("s2 is {}",s2);
 }
