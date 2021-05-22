@@ -1,5 +1,6 @@
 fn main(){
     let s = String::from("hello");
-    let slice = &s[0..2];
-    println!("{}",slice);
+
+    let len = s.len();
+    println!("{}",len);
 }
