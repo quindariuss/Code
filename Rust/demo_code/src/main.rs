@@ -6,6 +6,13 @@ let mut user1 = User {
     sign_in_count: 1,
 };
 
+let user2 = User{
+    email: String::from("bob.com"),
+    username: String::from("anotherusername"),
+    active: user1.active,
+    sign_in_count: user1.sign_in_count,
+}
+
 user1.email = String::from("notme@quindarius.com")
 }
 
