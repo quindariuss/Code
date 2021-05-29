@@ -1,10 +1,10 @@
-enum IpVersion{
-    V4(u8,u8,u8,u8),
-    V6(String),
+enum Message{
+    Quit,
+    Move{ x: i32, y: i32},
+    Write(String),
+    ChangeColor (i32, i32, i32),
 }
 
-fn route(ip_version: IpVersion){ }
-fn main() {
-    let home = IpVersion::V4(127,0,0,1);
-    let loopback = IpVersion::V6(String::from("::1"));
+fn main(){
+    println!("Hello World");
 }
