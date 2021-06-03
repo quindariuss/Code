@@ -2,7 +2,7 @@ import react from 'react'
 import App from './App'
 import { useState } from 'react';
 import reactdom from 'react-dom'
-import posts from './words-small.json'
+
 import
 {
 	ChakraProvider,

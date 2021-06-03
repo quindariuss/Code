@@ -1,15 +1,20 @@
-const SearchBar = () => (
+const clear = () =>{
+
+}
+const SearchBar = ({ searchQuery, setSearchQuery }) => (
 	<form action="/" method="get">
-		<label htmlFor="header-search">
-			<span className="visually-hidden">Search blog posts</span>
-		</label>
+
 		<input
+			value={searchQuery}
+			autoComplete="off"
+			onChange={event => setSearchQuery(event.target.value)}
+			onInput={event => setSearchQuery("")}
 			type="text"
 			id="header-search"
-			placeholder="Search blog posts"
+			placeholder="Search Words"
 			name="s"
 		/>
-		<button type="submit">Search</button>
+
 	</form>
 );
 
