@@ -7,8 +7,7 @@ import
 	Text,
 	Link,
 } from '@chakra-ui/react'
-import { Formik } from 'formik'
-
+import { Formik, Field, Form, ErrorMessage } from 'formik';
 
 
 
@@ -35,43 +34,20 @@ const SignupForm = () => {
 				}, 400);
 			}}
 		>
-		{formik => (
-
-		<form onSubmit={formik.handleSubmit}>
+		<Form>
 			<label htmlFor="firstName">First Name</label>
-			<input
-				id="firstName"
-				name="firstName"
-				type="text"
-				{...formik.getFieldProps('firstName')}
-				value={formik.values.firstName}
-			/>
-		{formik.touched.firstName && formik.errors.firstName ? <div>{formik.errors.firstName}</div> : null}
+			<Field name="firstName" type="text"/>
+			<ErrorMessage name="firstName"/>
 			<label htmlFor="lastName">Last Name</label>
-			<input
-				id="lastName"
-				name="lastName"
-				type="text"
-				{...formik.getFieldProps('lastName')}
-				value={formik.values.lastName}
-			/>
-		{formik.touched.lastName && formik.errors.lastName ? <div>{formik.errors.lastName}</div> : null}
+			<Field name="lastName" type="text"/>
+			<ErrorMessage name="lastName"/>
 			<label htmlFor="email">Email Address</label>
-			<input
-				id="email"
-				name="email"
-				type="email"
-				{...formik.getFieldProps('lastName')}
-				value={formik.values.email}
-			/>
-		{formik.touched.email && formik.errors.email ? <div>{formik.errors.email}</div> : null}
-			<button type="submit">Submit</button>
-		</form>
-		)}
+			<Field name="email" type="email"/>
+			<ErrorMessage name="email"/>
+		</Form>
 		</Formik>
 	)
 }
-
 
 reactdom.render
 (
