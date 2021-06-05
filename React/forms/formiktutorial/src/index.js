@@ -6,10 +6,11 @@ import
 	Heading,
 	Text,
 	Link,
+	Button,
 } from '@chakra-ui/react'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 
-
+var name = ""
 
 
 const SignupForm = () => {
@@ -28,6 +29,7 @@ const SignupForm = () => {
 					.required('You have to have a email  by law'),
 			})}
 			onSubmit={(values, {setSubmitting})=> {
+				name = values.firstName
 				setTimeout(()=>{
 					alert(JSON.stringify(values, null, 2));
 					setSubmitting(false);
@@ -37,12 +39,13 @@ const SignupForm = () => {
 		<Form>
 			<Field name="firstName" className="form-input" placeholder="Quin"/>
 			<Field name="message" as="textarea" className="form-input"/>
-
 			<Field name="colors" as="select" className="my-select">
 				<option value="red">Red</option>
 				<option value="blue">Blue</option>
 				<option value="green">Green</option>
 			</Field>
+			<Button type="reset">Submit</Button>
+			<h1>{name}</h1>
 		</Form>
 		</Formik>
 	)

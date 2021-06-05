@@ -1,3 +1,4 @@
+
 const clear = () =>{
 
 }
@@ -14,7 +15,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => (
 			placeholder="Search Words"
 			name="s"
 		/>
-
+		<button type="reset">Reset</button>
 	</form>
 );
 
