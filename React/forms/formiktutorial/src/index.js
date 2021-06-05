@@ -35,15 +35,14 @@ const SignupForm = () => {
 			}}
 		>
 		<Form>
-			<label htmlFor="firstName">First Name</label>
-			<Field name="firstName" type="text"/>
-			<ErrorMessage name="firstName"/>
-			<label htmlFor="lastName">Last Name</label>
-			<Field name="lastName" type="text"/>
-			<ErrorMessage name="lastName"/>
-			<label htmlFor="email">Email Address</label>
-			<Field name="email" type="email"/>
-			<ErrorMessage name="email"/>
+			<Field name="firstName" className="form-input" placeholder="Quin"/>
+			<Field name="message" as="textarea" className="form-input"/>
+
+			<Field name="colors" as="select" className="my-select">
+				<option value="red">Red</option>
+				<option value="blue">Blue</option>
+				<option value="green">Green</option>
+			</Field>
 		</Form>
 		</Formik>
 	)
