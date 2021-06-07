@@ -1,4 +1,4 @@
-import react from 'react'
+import {useState} from 'react'
 import reactdom from 'react-dom'
 import
 {
@@ -12,6 +12,34 @@ import
 	Button,
 } from '@chakra-ui/react'
 
+
+
+function Search  () {
+	const [value, setValue] = useState("");
+	function handleClick() {
+		setValue("")
+	}
+	return(
+		<Center>
+		<form action="/" method="get">
+			<Input
+			value={value}
+			onChange={e => setValue(e.target.value)}
+			placeholder="search"
+			name="s"
+			/>
+			<Center p='10'>
+				<Button onClick={handleClick}type="reset">Reset Search</Button>
+			</Center>
+		</form>
+		<Heading>
+			{value}
+		</Heading>
+	</Center>
+	)
+}
+
+
 reactdom.render
 (
 	<ChakraProvider>
@@ -21,17 +49,7 @@ reactdom.render
 				Hello Word Explorer
 			</Center>
 		</Heading>
-		<Center>
-			<form action="/" method="get">
-				<Input
-				placeholder="search"
-				name="s"
-				/>
-				<Center p='10'>
-				<Button type="reset">Reset Search</Button>
-			</Center>
-			</form>
-		</Center>
+		<Search/>
 		<Center>
 		<Box width="lg" height="lg" bg="turquoise" borderRadius='10' border='2'>
 			Center
