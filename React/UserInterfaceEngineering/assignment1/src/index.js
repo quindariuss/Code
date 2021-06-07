@@ -8,34 +8,57 @@ import
 	Input,
 	Box,
 	Center,
-	Link,
+	HStack,
 	Button,
 } from '@chakra-ui/react'
+
+import words from './data/words'
 
 
 
 function Search  () {
 	const [value, setValue] = useState("");
+
 	function handleClick() {
 		setValue("")
 	}
+
+
+
 	return(
-		<Center>
+
 		<form action="/" method="get">
-			<Input
-			value={value}
-			onChange={e => setValue(e.target.value)}
-			placeholder="search"
-			name="s"
-			/>
+		<HStack m='5' spacing='5'>
+		<Input
+		autocomplete="off"
+		value={value}
+		onChange={e => setValue(e.target.value)}
+		placeholder="search"
+		name="s"
+		/>
+		<Button onClick={handleClick}type="reset">Reset Search</Button>
+		</HStack>
+
 			<Center p='10'>
-				<Button onClick={handleClick}type="reset">Reset Search</Button>
+
+
+<Text>{words.filter(word => word.includes(value)).length} Words Matching: '{value}'</Text>
 			</Center>
+			<Center>
+
+			<Box borderWidth='1px' boxSize="lg"  borderRadius='10' border='2' overflow="scroll">
+
+				{words.filter( word => word.includes(value)).map((word) => (
+					<Center>
+						<Text>
+							{word}
+						</Text>
+				</Center>
+				))}
+			</Box>
+		</Center>
 		</form>
-		<Heading>
-			{value}
-		</Heading>
-	</Center>
+
 	)
 }
 
@@ -50,11 +73,7 @@ reactdom.render
 			</Center>
 		</Heading>
 		<Search/>
-		<Center>
-		<Box width="lg" height="lg" bg="turquoise" borderRadius='10' border='2'>
-			Center
-		</Box>
-	</Center>
+
 	</div>
 	</ChakraProvider>,
 	document.getElementById('root')
