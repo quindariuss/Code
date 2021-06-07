@@ -20,7 +20,7 @@ fn value_in_cents(coin: Coin) -> u8 {
   Coin::Dime => 10,
   Coin::Quarter(state) =>{
     println!("State Quarter from {:?}!", state);
-    25;
+    25
     },
   }
 }
