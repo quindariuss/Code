@@ -36,7 +36,8 @@ function Search  () {
 		placeholder="search"
 		name="s"
 		/>
-		<Button onClick={handleClick}type="reset">Reset Search</Button>
+		<Button onClick={handleClick}type="reset">
+		Reset</Button>
 		</HStack>
 
 			<Center p='10'>
