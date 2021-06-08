@@ -6,6 +6,15 @@ mod tests {
     }
 }
 
+fn serve_order(){
+    mod back_of_house{
+        fn fix_incorrect_order(){
+            cook_order();
+            super::serve_order()
+        }
+    fn cook_order(){}
+    }
+}
 mod front_of_house {
    pub  mod hosting {
 
