@@ -28,10 +28,24 @@ elem.addEventListener(
 // Add element.
 elements.push({
   colour: "#05EFFF",
-  width: 150,
-  height: 100,
+  width: 50,
+  height: 50,
   top: 20,
   left: 15,
+});
+elements.push({
+  colour: "#05EFFF",
+  width: 50,
+  height: 50,
+  top: 20,
+  left: 70,
+});
+elements.push({
+  colour: "#05EFFF",
+  width: 50,
+  height: 50,
+  top: 20,
+  left: 125,
 });
 
 // Render elements.
