@@ -44,7 +44,7 @@ elements.push({
   colour: "#05EFFF",
   width: 50,
   height: 50,
-  top: 20,
+  top: 70,
   left: 125,
 });
 
