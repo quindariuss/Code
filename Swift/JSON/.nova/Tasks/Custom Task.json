@@ -1,0 +1,14 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "script" : "swift build"
+    },
+    "run" : {
+      "enabled" : true,
+      "script" : "swift run"
+    }
+  },
+  "identifier" : "67E15344-27B6-490F-ABED-3F3B2BCBD7E9",
+  "openLogOnRun" : "start"
+}
