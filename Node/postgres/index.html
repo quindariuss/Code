@@ -1,0 +1,33 @@
+<body>
+  <form name="login" onsubmit="helloworld()">
+    Email: <input id="email" type="text" /> Password:
+    <input id="password" type="text" />
+    <input type="submit" />
+  </form>
+  <button onclick="signin()">BOBOBB</button>
+  <h1 id="result"></h1>
+  <script>
+    // Request (GET http://localhost:8080/api?email=quindarius&password=123)
+
+    function helloworld() {
+      console.log("hello world");
+      document.getElementById("result").innerHTML =
+        document.getElementById("email").value;
+    }
+
+    function signin() {
+      fetch(
+        "http://localhost:8080/api?email=" +
+          document.getElementById("email").value +
+          "&password=123",
+        {
+          method: "POST",
+          headers: {},
+        }
+      )
+        .then((res) => (document.getElementById("result").innerHTML = res))
+        .then(console.log.bind(console))
+        .catch(console.error.bind(console));
+    }
+  </script>
+</body>
