@@ -1,49 +1,37 @@
-const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
+const MongoClient = require("mongodb").MongoClient;
+const assert = require("assert");
 
 // Connection URL
-const url = 'mongodb://localhost:27017';
+const url = "mongodb://localhost:27017";
 
 // Database Name
-const dbName = 'myproject';
 
 // Create a new MongoClient
 const client = new MongoClient(url);
 
-// Use connect method to connect to the Server
-client.connect(function(err) {
-  assert.equal(null, err);
-  console.log("Connected successfully to server");
+// // Use connect method to connect to the server
+// client.connect(function (err) {
+//   const db = client.db("myproject").collection("test");
+//   try {
+//   const data = db.find({ name: "bob" });
+//   }finally {
+//     // Ensures that the client will close when you finish/error
+//     await client.close();
+//   }
+//   console.log(data);
+// });
 
-  const db = client.db(dbName);
+async function run() {
+  try {
+    await client.connect();
+    const db = client.db("myproject").collection("test");
+    // Query for a movie that has the title 'Back to the Future'
 
-  client.close();
-});
-
-const insertDocuments = function(db, callback) {
-    // Get the documents collection
-    const collection = db.collection('documents');
-    // Insert some documents
-    collection.insertMany([
-      {a : 1}, {a : 2}, {a : 3}
-    ], function(err, result) {
-      assert.equal(err, null);
-      assert.equal(3, result.result.n);
-      assert.equal(3, result.ops.length);
-      console.log("Inserted 3 documents into the collection");
-      callback(result);
-    });
+    const data = await db.find();
+    console.log({ data });
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
   }
-
-
-// Use connect method to connect to the server
-client.connect(function(err) {
-  assert.equal(null, err);
-  console.log("Connected successfully to server");
-
-  const db = client.db(dbName);
-
-  insertDocuments(db, function() {
-    client.close();
-  });
-});
+}
+run().catch(console.dir);
