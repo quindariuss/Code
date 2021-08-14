@@ -1,0 +1,7 @@
+id = input ( ’ i d ’ )
+password=input ( ’ password ’ )
+db=sqlite3. connec t ( ‘NameOfYourDB’)
+try :
+	result = print ( result )
+		except :
+		print ( “Error ” )
